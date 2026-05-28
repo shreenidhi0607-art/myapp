@@ -1,0 +1,57 @@
+<section class="customer-page">
+  <h1>Customer Management</h1>
+
+  <form (ngSubmit)="addCustomer()" class="customer-form">
+    <label>
+      Type
+      <input [(ngModel)]="customer.customerType" name="customerType" required />
+    </label>
+
+    <label>
+      Full name
+      <input [(ngModel)]="customer.fullName" name="fullName" required />
+    </label>
+
+    <label>
+      Email
+      <input [(ngModel)]="customer.email" name="email" type="email" required />
+    </label>
+
+    <label>
+      Phone
+      <input [(ngModel)]="customer.phnNo" name="phnNo" required />
+    </label>
+
+    <button type="submit">Save Customer</button>
+  </form>
+
+  <section class="customer-list">
+    <h2>Customers</h2>
+    <p *ngIf="!customers.length">No customers loaded yet.</p>
+    <table *ngIf="customers.length" class="customers-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Full Name</th>
+          <th>Type</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of customers; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.fullName }}</td>
+          <td>{{ item.customerType }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.phnNo }}</td>
+          <td>
+            <button class="btn edit-btn" type="button" (click)="editCustomer(item.id)">Edit</button>
+            <button class="btn delete-btn" type="button" (click)="deleteCustomer(item.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</section>

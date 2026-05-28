@@ -1,0 +1,49 @@
+﻿<style>
+  :host {
+    display: block;
+    min-height: 100vh;
+    font-family: Inter, system-ui, sans-serif;
+    margin: 0;
+    background: #f8fafc;
+    color: #111827;
+  }
+
+  .main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+
+  .app-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .app-nav a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .app-nav a:hover {
+    text-decoration: underline;
+  }
+
+  .app-view {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  }
+</style>
+
+<main class="main">
+  <nav class="app-nav">
+    <a routerLink="/customer">Customer</a>
+  </nav>
+  <section class="app-view">
+    <router-outlet></router-outlet>
+  </section>
+</main>
