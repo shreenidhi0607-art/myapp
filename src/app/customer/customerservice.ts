@@ -9,7 +9,7 @@ import { Customermodel } from './customermodel';
 
 export class Customermodelservice {
 
-    private apiUrl = 'http://localhost:8080/customers';
+    private apiUrl = 'https://product-u5gj.onrender.com/customers';
 
     constructor(private http: HttpClient) { }
 
